@@ -1,0 +1,14 @@
+{
+  "name": "machao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "dependencies": {
+    "pg": "^6.1.2",
+    "pg-io": "^0.8.2",
+    "typescript": "^2.1.4",
+    "typings": "^2.1.0"
+  }
+}
