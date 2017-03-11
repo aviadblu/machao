@@ -1,0 +1,32 @@
+<div *ngIf="!ready">Loading...</div>
+<table *ngIf="ready">
+  <tr>
+    <th *ngFor="let column of columns">{{column.displayName || column.name}}</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let row of rowData; let i = index"
+      class="rest-table-row"
+      [class.edit-mode]="row.editMode"
+      [class.highlight]="row.highlight"
+      [class.error]="row.error"
+      [id]="'rest-table-row-' + i">
+    <td *ngFor="let column of columns; let j = index">
+      <span [class.hideInEditMode]="!columns[j].cantEdit">
+        {{row[columns[j].name]}}
+      </span>
+      <input *ngIf="!columns[j].cantEdit" class="showInEditMode" [(ngModel)]="row[columns[j].name]" />
+    </td>
+    <td>
+      <button class="hideInEditMode" (click)="editRow(i)">Edit</button>
+      <button class="showInEditMode" (click)="cancelEditRow(i)">Cancel</button>
+      <button class="showInEditMode" (click)="saveRow(i)">Save</button>
+    </td>
+    <td>
+      <button (click)="deleteRow(i)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+
+

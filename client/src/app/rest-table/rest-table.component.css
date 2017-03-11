@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  border: 1px solid slategray;
+}
+
+td {
+  padding: 3px;
+  border: 1px solid slategray;
+}
+
+.rest-table-row {
+  -webkit-transition: background 300ms linear;
+  -moz-transition: background 300ms linear;
+  -ms-transition: background 300ms linear;
+  -o-transition: background 300ms linear;
+  transition: background 300ms linear;
+}
+
+.rest-table-row.highlight {
+  background-color: aquamarine;
+}
+
+.rest-table-row.error {
+  background-color: salmon;
+}
+
+.showInEditMode {
+  display: none;
+}
+
+.edit-mode .showInEditMode {
+  display: inline-block;
+}
+
+.edit-mode .hideInEditMode {
+  display: none;
+}
